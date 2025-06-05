@@ -1,0 +1,74 @@
+.contactInfo {
+    width: 600px;
+    text-align: left;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+pre {
+    color: #004080;
+}
+
+.mediumTable {
+    width: 600px;
+    text-align: left;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #004080;
+    color: white;
+}
+
+nav a {
+    color: white;
+    margin: 0 1em;
+    text-decoration: none;
+}
+
+main {
+    padding: 2em;
+}
+
+footer {
+    background-color: #eee;
+    text-align: left;
+    padding: 1em;
+    margin-top: 2em;
+}
+
+#footer-text {
+    text-align: left;
+    align: left;
+}
+
+.download-box {
+            background-color: white;
+            padding: 1.5em;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 2em;
+ }
+
+ .download-link {
+            display: inline-block;
+            margin-top: 1em;
+            padding: 0.75em 1.5em;
+            background-color: #0074D9;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+ }
+
+ .download-link:hover {
+            background-color: #005fa3;
+ }

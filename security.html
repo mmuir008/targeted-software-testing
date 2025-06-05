@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Targeted Software Testing Corporation</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header>
+    <table class="headerTable">
+        <tr>
+            <td><img src="images/logo1.jpeg" alt="Targeted Testing Logo" style="height:80px;"></td>
+            <td>&nbsp;</td>
+            <td><h1>The Cyber-security Services We Offer</h1></td>
+        </tr>
+    </table>
+    <br>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="startup.html">Startup?</a>
+        <a href="services.html">Services</a>
+        <a href="future.html">Future</a>
+        <a href="contact.html">Contact</a>
+        <a href="downloads.html">Downloads</a>
+    </nav>
+</header>
+<main>
+    <h2>The Cyber-security services we offer:</h2>
+    <p><b>1.  Authentication & Session Management Tests</b></p>
+    <ul>
+        <li>Weak password policies (e.g., short passwords, no complexity requirements)</li>
+        <li>Brute-force protection (rate limiting, account lockouts)</li>
+        <li>Multi-factor authentication (MFA) enforcement</li>
+        <li>Session fixation and session ID predictability</li>
+        <li>Session timeout and logout mechanisms</li>
+        <li>Secure cookie flags: HttpOnly, Secure, and SameSite</li>
+    </ul>
+    <p><b>2.  Input Validation / Injection Tests</b></p>
+    <ul>
+        <li>SQL Injection (SQLi) — attempt to manipulate database queries via form inputs or URL parameters
+        <li>Cross-Site Scripting (XSS) — test if unescaped user input is executed in the browser</li>
+        <li>Command Injection — if user input reaches a system command</li>
+        <li>XML External Entity (XXE) attacks if the app parses XML</li>
+    </ul>
+    <p><b>3. Access Control Tests</b></p>
+    <ul>
+        <li>Vertical privilege escalation — Can a regular user access admin functionality?</li>
+        <li>Horizontal privilege escalation — Can a user access another user’s data?</li>
+        <li>Direct Object Reference (IDOR) — Accessing /user?id=2 when you’re only authorized for id=1</li>
+    </ul>
+    <p><b>4. Transport Layer Security</b></p>
+    <ul>
+        <li>Ensure HTTPS is enforced (HTTP requests are redirected to HTTPS)</li>
+        <li>Test for SSL/TLS misconfigurations (e.g., weak ciphers, expired certs)</li>
+        <li>Use tools like SSL Labs to scan for weaknesses</li>
+    </ul>
+    <p><b>5. Data Storage and Leakage</b></p>
+    <ul>
+        <li>Sensitive data in source code (API keys, passwords, debug logs)</li>
+        <li>Sensitive data in local/session storage</li>
+        <li>Database encryption at rest</li>
+        <li>Sensitive data in URL parameters (e.g., ?password=abc123)</li>
+    </ul>
+    <p><b>6. Security Headers & CSP</b></p>
+    <ul>
+        <li>Content-Security-Policy</li>
+        <li>Strict-Transport-Security</li>
+        <li>X-Frame-Options</li>
+        <li>X-XSS-Protection</li>
+        <li>X-Content-Type-Options</li>
+    </ul>
+    <p><b>7. File Upload Vulnerabilities</b></p>
+    <ul>
+        <li>Try uploading .php, .jsp, or .exe files</li>
+        <li>Test for MIME-type checking and extension filtering</li>
+        <li>Confirm files are stored in non-executable directories</li>
+    </ul>
+    <p><b>8. Mobile-Specific (if app is mobile-connected)</b></p>
+    <ul>
+        <li>Data storage on device (unencrypted SQLite, SharedPreferences)</li>
+        <li>Reverse engineering the APK/IPA</li>
+        <li>Network traffic inspection (via a proxy like Burp)</li>
+        <li>Insecure usage of WebView or exposed components</li>
+    </ul>
+    <p><b>9. Dependency & Patch Audits</b></p>
+    <ul>
+        <li>Outdated third-party libraries</li>
+        <li>Known CVEs (Common Vulnerabilities and Exposures)</li>
+    </ul>
+    <p><b>10. Logging and Monitoring</b></p>
+    <ul>
+        <li>Is failed login activity logged?</li>
+        <li>Is there audit logging for sensitive actions (e.g., password change)?</li>
+        <li>Are logs accessible or leaked via debug endpoints?</li>
+    </ul>
+    <p><b>Frameworks and Standards They Might Use</b></p>
+    <ul>
+        <li>OWASP Top 10 — a must-follow standard for identifying key risks</li>
+        <li>OWASP ASVS — Application Security Verification Standard</li>
+        <li>MITRE ATT&CK — advanced threat modeling</li>
+        <li>NIST SP 800-53/800-115 — government-grade testing guidance</li>
+    </ul>
+    <br/>
+    <p>Anything else you'd like us to test?  <a href="contact.html">GET IN TOUCH</a></p>
+</main>
+<footer>
+    <p>&copy; 2025 Targeted Software Testing</p>
+</footer>
+</body>
+</html>

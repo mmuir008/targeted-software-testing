@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future - Targeted Software Testing Corporation</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header>
+    <table>
+        <tr>
+            <td><img src="images/logo1.jpeg" alt="Targeted Testing Logo" style="height:80px;"></td>
+            <td>&nbsp;</td>
+            <td><h1>Future</h1></td>
+        </tr>
+    </table>
+    <br/>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="startup.html">Startup?</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+        <a href="downloads.html">Downloads</a>
+    </nav>
+</header>
+<main>
+    <h2>Example of Targeted Software Testing using AI</h2>
+    <p>A simple Login app was written (available for download in the
+        <a href="downloads.html">Downloads</a> section).
+        This ZIP file contains a .war file that should be added to the webapps directory
+        of a Tomcat9 installation. Once deployed, the app will be accessible via the URL
+        <a href="http://localhost:8080/SciFiSoftwareApp">http://localhost:8080/SciFiSoftwareApp</a>
+    </p>
+    <p>The following user accounts are enabled in the app.</p>
+    <table class="mediumTable">
+        <tr>
+            <td><b>Email</b></td>
+            <td><b>Password</b></td>
+            <td><b>Role</b></td>
+        </tr>
+        <tr>
+            <td>user@example.com</td>
+            <td>user123</td>
+            <td>ORDINARY</td>
+        </tr>
+        <tr>
+            <td>admin@example.com</td>
+            <td>admin123</td>
+            <td>ADMIN</td>
+        </tr>
+    </table>
+    <p>To use this app, first try to log in with credentials which are unknown to the app.
+        You will see an error message "Credentials not recognized".
+        Next, log into the app with the ORDINARY credentials, so the Home page is displayed, then log
+        out.  Finally, log into the app with the ADMIN credentials.  On the Home screen, click the
+        Report button.  The Report page will be displayed, showing the recent login attempts
+        (successful and unsuccessful).  Note that the error message displayed earlier is shown in the
+        report.
+    </p>
+    <p>I saved the app's sourcecode as old.zip</p>
+    <p>I changed the error message text in the following source code:</p>
+    <pre>src/controller/LoginServlet.java</pre>
+    <p>Next, I saved the updated source code in a file called new.zip, then I uploaded
+        old.zip and new.zip to ChatGPT (don't worry, we won't do this with <i>your</i> source code)
+        along with the Test Cases we had already defined.
+    </p>
+    <p>This is a list of all the Test Cases used to test the SciFiSoftware App.  If ypu want to see them, the Test Cases are in the SciFiSoftware
+        App ZIP File (see Downloads page).</p>
+    <ul>
+        <li>SFS TC 01 - Verify the Welcome page is displayed as expected</li>
+        <li>SFS TC 02 - Verify the Log In page</li>
+        <li>SFS TC 03 - Failed Login</li>
+        <li>SFS TC 04 - Successful login (Ordinary role)</li>
+        <li>SFS TC 05 - Successful Login (Admin role)</li>
+        <li>SFS TC 06 - View Attempted Login Report</li>
+        <li>SFS TC 07 - Security Check - Home page access when logged out</li>
+        <li>SFS TC 08 - Security Check - Clicking browser Back button does not allow you to see the Home Page or the Report Page</li>
+        <li>SFS TC 09 - Security Check - Verify Ordinary user cannot view Reports page</li>
+    </ul>
+    <p>You can probably see which Test Case we need to run: <b>SFS TC 03 - Fail Login</b> right?</p>
+    <p>OK, so I asked ChatGPT what was the minimal set of Test Cases we needed to run to verify the change.</p>
+    <p>This is the reply:</p>
+    <pre>
+Change Detected in LoginServlet.java
+Modified Error Message:
+diff
+- LoginAttemptLogger.getInstance().log(email, false, "Unrecognized credentials");
++ LoginAttemptLogger.getInstance().log(email, false, "Credentials not recognized");
+
+Impact Analysis
+The logic is identical — only the wording of the login failure message changed.
+This affects:
+The login.jsp error display
+The LoginAttemptLogger (used in the report.jsp and report test cases).
+
+Minimal Test Cases to Run
+To verify this change, only the following test cases need to be re-run:
+TC 03 – Failed Login
+Confirms the error message is correct in the UI.
+Verifies that the failed login path triggers correctly.
+TC 06 – View Attempted Login Report
+Ensures the new wording (“Credentials not recognized”) appears in the login attempt report.
+    </pre>
+    <p>See how it picked out <i>both</i> the <b>SFS TC 03 - Failed Login</b> test (which we guessed)
+        but also the <b>SFS TC 06 - View Attempted Login Report</b>?
+    </p>
+    <p>It told me the <i>minimal</i> set of TCs to run to verify the change!
+        This is a considerable improvement over relying on the QA Team to interpret
+        Release Notes written by the Developers, which are written from the point-of-view
+        of a Developer, rather than a User of the app you are testing.
+    </p>
+    <p>It also gave me a list of User Scenarios that we hadn't thought of to test.
+        This will save you time/money and give you a better product!
+    </p>
+</main>
+<footer>
+    <p id="footer-text">&copy; 2025 Targeted Software Testing</p>
+</footer>
+</body>
+</html>
